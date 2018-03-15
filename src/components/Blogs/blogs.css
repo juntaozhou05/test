@@ -1,0 +1,30 @@
+.blogs {
+  width: 50%;
+  margin: 20px 0 0 15%;
+}
+.blogs .items {
+  padding: 10px 10px 10px 30px;
+  background-color: white;
+  line-height: 35px;
+  color: gray;
+  position: relative;
+  padding-bottom: 25px;
+  cursor: pointer;
+  border-bottom: 0.0625rem #ececec dashed;
+}
+.blogs .items .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.blogs .items .content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.blogs .items .title:hover {
+  color: #007bff;
+}
+.blogs .items .content:hover {
+  color: #007bff;
+}

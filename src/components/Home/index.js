@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 import Header from "../Header";
+import Blogs from "../Blogs";
+import Right from "../Right";
+
+import "./home.css";
 
 class Home extends Component {
   constructor(props) {
@@ -11,6 +15,8 @@ class Home extends Component {
     return (
       <div className="home">
         <Header />
+        <Blogs />
+        <Right />
       </div>
     );
   }
