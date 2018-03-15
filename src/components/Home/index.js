@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Header from "../Header";
 import Blogs from "../Blogs";
 import Right from "../Right";
+import Bottom from "../Bottom";
 
 import "./home.css";
 
@@ -17,6 +18,7 @@ class Home extends Component {
         <Header />
         <Blogs />
         <Right />
+        <Bottom />
       </div>
     );
   }

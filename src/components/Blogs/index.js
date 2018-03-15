@@ -5,25 +5,37 @@ import "./blogs.css";
 class Blog extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      blog: []
+    };
   }
+  componentDidMount = () => {
+    fetch("/data.json")
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        console.log(data);
+        this.setState({
+          blog: data.data.blogs
+        });
+      })
+      .catch(ex => {
+        console.error("获取数据出错");
+      });
+  };
   render() {
     return (
       <div className="blogs">
-        <div className="items">
-          <div className="title">题目</div>
-          <div className="content">
-            将height设置为line-height的整数倍，防止超出的文字露出由于ie6-7不显示content内容，所以要添加标签兼容ie6-7由于ie6-7不显示content内容，所以要添加标签兼容ie6-7由于ie6-7不显示content内容，所以要添加标签兼容ie6-7
-          </div>
-          <div className="time">2018.01</div>
-        </div>
-        <div className="items">
-          <div className="title">题目</div>
-          <div className="content">
-            将height设置为line-height的整数倍，防止超出的文字露出由于ie6-7不显示content内容，所以要添加标签兼容ie6-7由于ie6-7不显示content内容，所以要添加标签兼容ie6-7由于ie6-7不显示content内容，所以要添加标签兼容ie6-7
-          </div>
-          <div className="time">2018.01</div>
-        </div>
+        {this.state.blog.map((item, index) => {
+          return (
+            <div className="items" key={index}>
+              <div className="title">{item.title}</div>
+              <div className="content">{item.content}</div>
+              <div className="time">{item.time}</div>
+            </div>
+          );
+        })}
       </div>
     );
   }
